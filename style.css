@@ -5,3 +5,13 @@
 .custom-background-color {
     background-color: #fcf2e8; /* Dark blue */
 }
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E97501;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+}
