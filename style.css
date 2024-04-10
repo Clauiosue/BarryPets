@@ -1,17 +1,32 @@
 .custom-navbar-color {
-    background-color: #e97501; /* Dark blue */
+    background-color: #e2983a; /* Dark blue */
 }
 
 .custom-background-color {
-    background-color: #fcf2e8; /* Dark blue */
+    background-color: #ffffff; /* Dark blue */
 }
 
 .footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #E97501;
+    background-color: #e2983a;
     color: black;
     text-align: center;
     padding: 5px 0;
 }
+
+
+.custom-rounded {
+  border-radius: 20px; 
+}
+
+.border-custom-color.border-custom-color {
+    border-color: #e97501;
+}
+
+.border-custom-color {
+    border-style: solid; /* Define el estilo del borde */
+    border-width: 2px; /* Define el ancho del borde */
+    border-color: var(--border-color-custom); /* Usa la variable para el color */
+  }
