@@ -26,7 +26,53 @@
 }
 
 .border-custom-color {
-    border-style: solid; /* Define el estilo del borde */
-    border-width: 2px; /* Define el ancho del borde */
-    border-color: var(--border-color-custom); /* Usa la variable para el color */
+    border-style: solid; 
+    border-width: 2px; 
+    border-color: var(--border-color-custom); 
   }
+
+
+ 
+.map-container {
+    width: 50%; 
+    max-width: 300px; 
+    margin: 50px auto; 
+    padding: 10px; 
+    background: #f5f5f5; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+    display: flex; 
+    justify-content: center; 
+    
+    align-items: center; 
+  }
+  
+  gmp-map {
+    width: 100%; 
+    height: 300px; 
+  }
+  
+  .map-container {
+    position: relative; 
+    width: 50%;
+    max-width: 300px; 
+    margin: 50px auto; 
+    padding-top: 50px; 
+    background: #f5f5f5; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .map-title {
+    position: absolute; 
+    top: 10px; 
+    width: 100%; 
+    text-align: center; 
+    color: #333; 
+    font-size: 1.2em; 
+    font-weight: bold; 
+  }
+  
