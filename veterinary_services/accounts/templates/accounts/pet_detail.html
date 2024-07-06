@@ -1,0 +1,29 @@
+<!-- accounts/templates/accounts/pet_detail.html -->
+{% extends 'accounts/base_generic.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Detalles de la Mascota: {{ pet.name }}</h2>
+          <p><strong>Especie:</strong> {{ pet.species }}</p>
+          <p><strong>Raza:</strong> {{ pet.breed }}</p>
+          <p><strong>Edad:</strong> {{ pet.age }}</p>
+          <div class="d-flex justify-content-between mt-4">
+            <a href="{% url 'pet_edit' pk=pet.pk %}" class="btn btn-primary">Editar</a>
+            <form method="post" action="{% url 'pet_delete' pk=pet.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
+          </div>
+          <div class="text-center mt-3">
+            <a href="{% url 'pet_list' %}" class="btn btn-secondary">Volver a la lista</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

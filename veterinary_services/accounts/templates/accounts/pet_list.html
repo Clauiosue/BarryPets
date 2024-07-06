@@ -1,0 +1,20 @@
+<!-- accounts/templates/accounts/pet_list.html -->
+{% extends 'accounts/base_generic.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Mis Mascotas</h2>
+          <p class="text-center">Aún no tienes mascotas registradas.</p>
+          <div class="text-center mt-3">
+            <a href="{% url 'pet_new' %}" class="btn btn-primary">Agregar nueva mascota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

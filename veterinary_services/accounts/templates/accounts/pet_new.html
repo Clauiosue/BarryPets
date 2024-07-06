@@ -1,0 +1,37 @@
+<!-- accounts/templates/accounts/pet_new.html -->
+{% extends 'accounts/base_generic.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Agregar Mascota</h2>
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="{{ form.name.id_for_label }}" class="form-label">{{ form.name.label }}</label>
+              {{ form.name }}
+            </div>
+            <div class="mb-3">
+              <label for="{{ form.age.id_for_label }}" class="form-label">{{ form.age.label }}</label>
+              {{ form.age }}
+            </div>
+            <div class="mb-3">
+              <label for="{{ form.breed.id_for_label }}" class="form-label">{{ form.breed.label }}</label>
+              {{ form.breed }}
+            </div>
+            <div class="mb-3">
+              <label for="{{ form.species.id_for_label }}" class="form-label">{{ form.species.label }}</label>
+              {{ form.species }}
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Guardar</button>
+          </form>
+          <p class="text-center mt-3"><a href="{% url 'pet_list' %}">Volver a la lista</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
