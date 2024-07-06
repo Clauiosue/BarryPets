@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Sitio{% endblock %}</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+</head>
+<body class="custom-background-color">
+    <nav class="navbar navbar-expand-lg custom-navbar-color">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="{% static 'accounts/images/BarryPetsLogov1.jpeg' %}" class="img-fluid img-thumbnail"  style="max-height: 80px; width: auto;" alt="..."></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'producto' %}">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'QuienesSomos' %}">Quienes Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Otros
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Testimonios de pacientes</a></li>
+                  <li><a class="dropdown-item" href="#">Comunas de atencion</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Petsitter</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ user.first_name }}
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'user_detail' %}">Ver perfil</a></li>
+                    <li><a class="dropdown-item" href="{% url 'pet_list' %}">Ver Mascotas</a></li>
+                    <li><a class="dropdown-item" href="{% url 'pet_new' %}">Crear Mascotas</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+                  </ul>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center text-sm-start">
+                    <!-- Instagram Icon -->
+                    <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <!-- Phone Icon and Barry Pets SPA Text -->
+                    <p><i class="fas fa-phone-alt"></i> Barry Pets SPA 2024</p>
+                </div>
+                <div class="col-sm-4 text-center text-sm-end">
+                    <!-- Additional text here -->
+                    <p>Santiago, Chile</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'accounts/js/index.js' %}"></script>
+</body>
+</html>

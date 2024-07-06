@@ -1,0 +1,63 @@
+<!-- accounts/templates/accounts/signup.html -->
+{% extends 'accounts/base_generic.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Registrarse</h2>
+          <form method="post" id="signupForm">
+            {% csrf_token %}
+            <div class="mb-3">
+              {{ form.username.label_tag }} {{ form.username }}
+            </div>
+            <div class="mb-3">
+              {{ form.first_name.label_tag }} {{ form.first_name }}
+            </div>
+            <div class="mb-3">
+              {{ form.last_name.label_tag }} {{ form.last_name }}
+            </div>
+            <div class="mb-3">
+              {{ form.email.label_tag }} {{ form.email }}
+            </div>
+            <div class="mb-3">
+              {{ form.phone.label_tag }} {{ form.phone }}
+            </div>
+            <div class="mb-3">
+              {{ form.address.label_tag }} {{ form.address }}
+            </div>
+            <div class="mb-3">
+              {{ form.password1.label_tag }} {{ form.password1 }}
+            </div>
+            <div class="mb-3">
+              {{ form.password2.label_tag }} {{ form.password2 }}
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+          </form>
+          <p class="text-center mt-3">¿Ya tienes una cuenta? <a href="{% url 'login' %}">Iniciar sesión</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('signupForm').addEventListener('submit', function(event) {
+    var form = this;
+    var valid = true;
+    ['username', 'first_name', 'last_name', 'email', 'phone', 'address', 'password1', 'password2'].forEach(function(field) {
+      if (!form[field].value) {
+        valid = false;
+        form[field].classList.add('is-invalid');
+      } else {
+        form[field].classList.remove('is-invalid');
+      }
+    });
+    if (!valid) {
+      event.preventDefault();
+    }
+  });
+</script>
+{% endblock %}
