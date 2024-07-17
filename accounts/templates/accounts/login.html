@@ -1,0 +1,27 @@
+<!-- accounts/templates/accounts/login.html -->
+{% extends 'accounts/base_generic.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Iniciar sesión</h2>
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              {{ form.username.label_tag }} {{ form.username }}
+            </div>
+            <div class="mb-3">
+              {{ form.password.label_tag }} {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+          </form>
+          <p class="text-center mt-3">¿No tienes una cuenta? <a href="{% url 'signup' %}">Regístrate aquí</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

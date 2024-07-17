@@ -1,0 +1,12 @@
+<!-- accounts/templates/accounts/pet_edit.html -->
+{% extends 'accounts/base_generic.html' %}
+
+{% block content %}
+  <h2>Agregar/Editar Mascota</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+  <a href="{% url 'pet_list' %}">Volver a la lista</a>
+{% endblock %}

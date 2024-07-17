@@ -1,0 +1,51 @@
+{% extends 'accounts/base_generic.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <br>
+    <h1 style="text-align: center;">Servicios en Barry Pets</h1>
+    <br>
+    <div class="container-fluid">
+    <div class = "container-fluid">
+        <div class = "row">
+            <div class = "col-md-6">
+               
+                <h2 style="text-align: center;">Etologia Clinica</h2>
+                <p>Nuestros servicios de Etologia tiene un enfoque tanto para la mascota como para el tutor. Realizamos una evaluacion inicial para entender el comportamiento inicial de la mascota y  como el tutor incentiva estas conductas. Determinamos un nivel conductual y evaluamos un plan trabajo. Es importante la constancia y compromiso del tutor para tener un exito en la conducta </p>
+                <p> Nuestras sesiones dependen de cada animal y de la disposicion del tutor, pueden ser de 4 a 12 sesiones.</p>
+    </div>
+    <div class = "col-md-6">
+               
+        <image src="servicio_etologia.jpg" class="img-fluid"  style="max-height: 400px; width: auto;" alt="...">
+</div>
+    </div>
+    </div>
+<br>
+    <div class = "container-fluid">
+        <div class = "row">
+            <div class = "col-md-6">
+               
+                <image src="servicio_consultaClinica.jpeg" class="img-fluid"  style="max-height: 400px; width: auto;" alt="...">
+    </div>
+    <div class = "col-md-6">
+               
+        <h2 style="text-align: center;">Consultas Clinicas</h2>
+        <p>Nuestro servicios de consulta clinica consiste en servicio de examen general para las mascotas, esquema de vacunación según calendario y desparasitaciones tanto internas como externas.</p> 
+        <p> Realizamos un examen fisico general y ofrecemos recomendaciones para la salud de la mascota. </p>
+        <p> Tenemos un horario de lunes a viernes de 9:00 am a 6:00 pm y sabados de 9:00 am a 3:00 pm.</p>
+</div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <div class="map-container">
+      <h2 class="map-title">Dónde nos puedes encontrar</h2>
+    <gmp-map center="-33.42300796508789,-70.57521057128906" zoom="14" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker position="-33.42300796508789,-70.57521057128906" title="My location"></gmp-advanced-marker>
+    </gmp-map>
+    </div>
+    
+   
+
+{% endblock %}
