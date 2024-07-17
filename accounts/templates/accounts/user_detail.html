@@ -2,32 +2,38 @@
 {% extends 'accounts/base_generic.html' %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8 col-sm-10">
-      <div class="card">
+      <div class="card shadow-lg">
         <div class="card-body">
-          <h2 class="card-title text-center">Detalle del Usuario</h2>
+          <h2 class="card-title text-center mb-4">Detalle del Usuario</h2>
           <div class="mb-3">
-            <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+            <p class="fw-bold">Nombre de usuario:</p>
+            <p>{{ user.username }}</p>
           </div>
           <div class="mb-3">
-            <p><strong>Nombre:</strong> {{ user.first_name }}</p>
+            <p class="fw-bold">Nombre:</p>
+            <p>{{ user.first_name }}</p>
           </div>
           <div class="mb-3">
-            <p><strong>Apellido:</strong> {{ user.last_name }}</p>
+            <p class="fw-bold">Apellido:</p>
+            <p>{{ user.last_name }}</p>
           </div>
           <div class="mb-3">
-            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p class="fw-bold">Email:</p>
+            <p>{{ user.email }}</p>
           </div>
           <div class="mb-3">
-            <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+            <p class="fw-bold">Teléfono:</p>
+            <p>{{ user.phone }}</p>
           </div>
           <div class="mb-3">
-            <p><strong>Dirección:</strong> {{ user.address }}</p>
+            <p class="fw-bold">Dirección:</p>
+            <p>{{ user.address }}</p>
           </div>
           <div class="text-center mt-3">
-            <a href="{% url 'pet_list' %}" class="btn btn-primary">Mis Mascotas</a>
+            <a href="{% url 'pet_list' %}" class="btn btn-primary w-100">Mis Mascotas</a>
           </div>
         </div>
       </div>

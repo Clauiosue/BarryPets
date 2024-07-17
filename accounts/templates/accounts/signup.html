@@ -1,39 +1,71 @@
-
 <!-- accounts/templates/accounts/signup.html -->
 {% extends 'accounts/base_generic.html' %}
+{% load form_tags %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="card">
+      <div class="card shadow-lg">
         <div class="card-body">
-          <h2 class="card-title text-center">Registrarse</h2>
+          <h2 class="card-title text-center mb-4">Registrarse</h2>
           <form method="post" id="signupForm">
             {% csrf_token %}
             <div class="mb-3">
-              {{ form.username.label_tag }} {{ form.username }}
+              <label for="id_username" class="form-label">{{ form.username.label }}</label>
+              {{ form.username|add_class:"form-control" }}
+              {% if form.username.errors %}
+                <div class="text-danger">{{ form.username.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.first_name.label_tag }} {{ form.first_name }}
+              <label for="id_first_name" class="form-label">{{ form.first_name.label }}</label>
+              {{ form.first_name|add_class:"form-control" }}
+              {% if form.first_name.errors %}
+                <div class="text-danger">{{ form.first_name.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.last_name.label_tag }} {{ form.last_name }}
+              <label for="id_last_name" class="form-label">{{ form.last_name.label }}</label>
+              {{ form.last_name|add_class:"form-control" }}
+              {% if form.last_name.errors %}
+                <div class="text-danger">{{ form.last_name.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.email.label_tag }} {{ form.email }}
+              <label for="id_email" class="form-label">{{ form.email.label }}</label>
+              {{ form.email|add_class:"form-control" }}
+              {% if form.email.errors %}
+                <div class="text-danger">{{ form.email.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.phone.label_tag }} {{ form.phone }}
+              <label for="id_phone" class="form-label">{{ form.phone.label }}</label>
+              {{ form.phone|add_class:"form-control" }}
+              {% if form.phone.errors %}
+                <div class="text-danger">{{ form.phone.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.address.label_tag }} {{ form.address }}
+              <label for="id_address" class="form-label">{{ form.address.label }}</label>
+              {{ form.address|add_class:"form-control" }}
+              {% if form.address.errors %}
+                <div class="text-danger">{{ form.address.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.password1.label_tag }} {{ form.password1 }}
+              <label for="id_password1" class="form-label">{{ form.password1.label }}</label>
+              {{ form.password1|add_class:"form-control" }}
+              {% if form.password1.errors %}
+                <div class="text-danger">{{ form.password1.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.password2.label_tag }} {{ form.password2 }}
+              <label for="id_password2" class="form-label">{{ form.password2.label }}</label>
+              {{ form.password2|add_class:"form-control" }}
+              {% if form.password2.errors %}
+                <div class="text-danger">{{ form.password2.errors }}</div>
+              {% endif %}
             </div>
             <button type="submit" class="btn btn-primary w-100">Registrarse</button>
           </form>
@@ -44,18 +76,41 @@
   </div>
 </div>
 
+
 <script>
   document.getElementById('signupForm').addEventListener('submit', function(event) {
     var form = this;
     var valid = true;
-    ['username', 'first_name', 'last_name', 'email', 'phone', 'address', 'password1', 'password2'].forEach(function(field) {
-      if (!form[field].value) {
+    var fields = ['username', 'first_name', 'last_name', 'email', 'phone', 'address', 'password1', 'password2'];
+
+    fields.forEach(function(field) {
+      var input = form[field];
+      var errorDiv = document.getElementById(field + '-error');
+      if (!input.value) {
         valid = false;
-        form[field].classList.add('is-invalid');
+        input.classList.add('is-invalid');
+        if (errorDiv) {
+          errorDiv.textContent = 'Este campo es obligatorio.';
+        }
       } else {
-        form[field].classList.remove('is-invalid');
+        input.classList.remove('is-invalid');
+        if (errorDiv) {
+          errorDiv.textContent = '';
+        }
       }
     });
+
+    if (form.password1.value !== form.password2.value) {
+      valid = false;
+      form.password1.classList.add('is-invalid');
+      form.password2.classList.add('is-invalid');
+      document.getElementById('password2-error').textContent = 'Las contraseñas no coinciden.';
+    } else {
+      form.password1.classList.remove('is-invalid');
+      form.password2.classList.remove('is-invalid');
+      document.getElementById('password2-error').textContent = '';
+    }
+
     if (!valid) {
       event.preventDefault();
     }

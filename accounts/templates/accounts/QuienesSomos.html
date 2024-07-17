@@ -1,72 +1,60 @@
 {% extends 'accounts/base_generic.html' %}
 {% load static %}
-{% block title %}Inicio{% endblock %}
+{% block title %}Quienes Somos{% endblock %}
 
 {% block content %}
-        
-        <div class="container-fluid col-md-6">
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 style="text-align: center;">Quienes Somos</h2>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <p style="text-align: center;"> Mi nombre es Nicolas Barriga. 
-                      Medico veterinario de la Universidad Mayor
-                      Entrenador canino profesional Fundación Tregua
-                      Diplomado etología clínica Universidad Santo Tomas
-                    Funde este proyecto con la intención de poder entregar una atención de calidad a las mascotas.
-                  
-                  Actualmente, además me acompaña Consuelo, quien se concentra en apoyo en las atenciones a domicilio, petsitter y paseos, formando así un equipo a la altura de las necesidades de tu mascota.
-                  Aunque este proyecto aun esta iniciando, ya contamos con mas de 100 pacientitos y muchos casos exitosos de consultas etologicas.
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2 class="text-center mb-4">Quienes Somos</h2>
+            <p class="text-center">
+                Mi nombre es Nicolas Barriga. Médico veterinario de la Universidad Mayor.
+                Entrenador canino profesional Fundación Tregua. Diplomado etología clínica Universidad Santo Tomás.
+                Fundé este proyecto con la intención de poder entregar una atención de calidad a las mascotas.
+                Actualmente, además me acompaña Consuelo, quien se concentra en apoyo en las atenciones a domicilio, petsitter y paseos,
+                formando así un equipo a la altura de las necesidades de tu mascota.
+                Aunque este proyecto aún está iniciando, ya contamos con más de 100 pacientitos y muchos casos exitosos de consultas etológicas.
+            </p>
+        </div>
+    </div>
 
-                </p>
+    <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'accounts/images/qs1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Se favorece la interacción con los dueños</h5>
+                    <p class="card-text">Sesiones divertidas y educativas para tus mascotas</p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid col-md-12">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="card">
-              <img src="nico.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Se favorece la interacción con los dueños</h5>
-                <p class="card-text">Sesiones divertidas y educativas para tus mascotas</p>
-              </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'accounts/images/qs2.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">¿Qué animales atiendo?</h5>
+                    <p class="card-text">Trabajo con gatos y perros</p>
+                </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="nico2.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">¿Que animales atiendo?</h5>
-                <p class="card-text">Trabajo con gatos y perros</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="Sin título.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Consulta integral</h5>
-                <p class="card-text">Sugiero rutinas, productos y cambios ambientales para mejorar la calidad de vida de tu mascota</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="Sin títulorrr.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Trabajo interdisplinario</h5>
-                <p class="card-text">Examenes, consultas veterinarias, vacunas y nutrición animal.</p>
-              </div>
-            </div>
-          </div>
         </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'accounts/images/qs3.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Consulta integral</h5>
+                    <p class="card-text">Sugiero rutinas, productos y cambios ambientales para mejorar la calidad de vida de tu mascota</p>
+                </div>
+            </div>
         </div>
-        
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'accounts/images/qs4.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Trabajo interdisciplinario</h5>
+                    <p class="card-text">Exámenes, consultas veterinarias, vacunas y nutrición animal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
-        

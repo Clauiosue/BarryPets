@@ -1,20 +1,29 @@
 <!-- accounts/templates/accounts/login.html -->
 {% extends 'accounts/base_generic.html' %}
+{% load form_tags %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="card">
+      <div class="card shadow-lg">
         <div class="card-body">
-          <h2 class="card-title text-center">Iniciar sesión</h2>
+          <h2 class="card-title text-center mb-4">Iniciar sesión</h2>
           <form method="post">
             {% csrf_token %}
             <div class="mb-3">
-              {{ form.username.label_tag }} {{ form.username }}
+              <label for="id_username" class="form-label">{{ form.username.label }}</label>
+              {{ form.username|add_class:"form-control" }}
+              {% if form.username.errors %}
+                <div class="text-danger">{{ form.username.errors }}</div>
+              {% endif %}
             </div>
             <div class="mb-3">
-              {{ form.password.label_tag }} {{ form.password }}
+              <label for="id_password" class="form-label">{{ form.password.label }}</label>
+              {{ form.password|add_class:"form-control" }}
+              {% if form.password.errors %}
+                <div class="text-danger">{{ form.password.errors }}</div>
+              {% endif %}
             </div>
             <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
           </form>

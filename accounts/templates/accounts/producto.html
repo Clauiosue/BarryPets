@@ -4,33 +4,38 @@
 
 {% block content %}
   <div class="container-fluid">
-  <h3><br>Conoce nuestros productos:<br><br></h3>
-  <div class="card-group">
-    <div class="card">
-      <img src="kong_classic_large.jpg" class="card-img-top" style="max-height: 58%; width: auto;" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Kong Clasico mediano</h5>
-        <p class="card-text">El juguete mas popular</p>
-        <p class="card-text"><small class="text-body-secondary">$25.990</small></p>
+    <h3><br>Conoce nuestros productos:<br><br></h3>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'accounts/images/kong_classic_large.jpg' %}" class="card-img-top" style="max-height: 400px; object-fit: cover;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Kong Clasico mediano</h5>
+            <p class="card-text">El juguete más popular</p>
+            <p class="card-text"><small class="text-body-secondary">$25.990</small></p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="Kong®-Wobbler-Para-Gatos-1-1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Kong Wobbler Gatos</h5>
-        <p class="card-text">Kong para gatos de tamaño mediano con cola</p>
-        <p class="card-text"><small class="text-body-secondary">$20.990</small></p>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'accounts/images/kong_wobbler.webp' %}" class="card-img-top" style="max-height: 400px; object-fit: cover;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Kong Wobbler Gatos</h5>
+            <p class="card-text">Kong para gatos de tamaño mediano con cola</p>
+            <p class="card-text"><small class="text-body-secondary">$20.990</small></p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="juguete-para-perros.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Hueso Kong</h5>
-        <p class="card-text">Resistente y amable con la dentadura de tu mascota</p>
-        <p class="card-text"><small class="text-body-secondary">$15.990</small></p>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'accounts/images/hueso_kong.jpg' %}" class="card-img-top" style="max-height: 400px; object-fit: cover;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hueso Kong</h5>
+            <p class="card-text">Resistente y amable con la dentadura de tu mascota</p>
+            <p class="card-text"><small class="text-body-secondary">$15.990</small></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 {% endblock %}
